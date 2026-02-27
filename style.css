@@ -202,7 +202,7 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 15px transparent;
 }
 
@@ -364,6 +364,9 @@ footer {
 
 .form-group input,
 .form-group textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     padding: 1rem;
     border: 1px solid var(--glass-border);
     border-radius: 8px;
@@ -371,7 +374,7 @@ footer {
     color: var(--text-color);
     font-family: var(--font-body);
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .form-group input:focus,
@@ -388,6 +391,9 @@ footer {
 }
 
 .submit-btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     align-self: center;
     cursor: pointer;
     background: var(--accent-color);
@@ -399,7 +405,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submit-btn:hover {
