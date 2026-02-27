@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tl = gsap.timeline();
     tl.from('.hero-logo', { y: 50, opacity: 0, duration: 1, ease: 'power3.out' })
         .from('.subtitle', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
-        .from('.cta-btn', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out', clearProps: 'all' }, '-=0.5');
+        .from('.cta-btn', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5');
 
     // Parallax background
     gsap.to('#parallax-bg', {

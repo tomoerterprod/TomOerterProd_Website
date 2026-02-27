@@ -202,8 +202,14 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 4px;
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 0 0 15px transparent;
+    opacity: 1;
+    /* Explicit Safari fix */
+    -webkit-transform: translateZ(0);
+    /* Hardware acceleration */
+    transform: translateZ(0);
+    will-change: opacity, transform;
 }
 
 .cta-btn:hover {
@@ -370,11 +376,22 @@ footer {
     padding: 1rem;
     border: 1px solid var(--glass-border);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
+    -webkit-border-radius: 8px;
+    /* Safari fix */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Avoid background shorthand */
     color: var(--text-color);
+    -webkit-text-fill-color: var(--text-color);
+    /* Safari fix */
+    opacity: 1;
+    /* Safari placeholder fix */
     font-family: var(--font-body);
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    font-size: 16px;
+    /* Safari zoom prevent */
+    box-shadow: none;
+    /* Safari shadow reset */
+    -webkit-box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .form-group input:focus,
@@ -382,7 +399,15 @@ footer {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 10px var(--accent-glow);
-    background: rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: 0 0 10px var(--accent-glow);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
+    opacity: 0.7;
 }
 
 .form-group textarea {
@@ -396,21 +421,27 @@ footer {
     appearance: none;
     align-self: center;
     cursor: pointer;
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     color: #fff;
+    -webkit-text-fill-color: #fff;
     border: none;
     padding: 1rem 3rem;
     font-family: var(--font-heading);
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 4px;
+    -webkit-border-radius: 4px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    opacity: 1;
+    /* Safari fix */
 }
 
 .submit-btn:hover {
-    background: #4f46e5;
+    background-color: #4f46e5;
     box-shadow: 0 0 20px var(--accent-glow);
+    -webkit-box-shadow: 0 0 20px var(--accent-glow);
 }
 
 /* Responsive */
