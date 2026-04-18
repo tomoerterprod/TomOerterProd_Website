@@ -1,139 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom Oerter Prod | 3D, VFX, Filming & Editing</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <meta name="description"
-        content="Portfolio of Tom Oerter Prod. Specializing in 3D, VFX, filming, and video editing.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script defer src="js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tom Oerter Prod — 3D, VFX & Film Production</title>
+  <meta name="description" content="Tom Oerter — 3D artist, VFX supervisor and director based in Germany. Photorealistic CG, motion graphics and visual effects for commercial and narrative productions.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="dark-theme">
-    <nav id="navbar">
-        <a href="#home" class="logo"><img src="assets/logo.png" alt="Tom Oerter Prod"></a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+<!-- ── MOBILE NAV OVERLAY ── -->
+<div id="nav-overlay" class="nav-overlay">
+  <a href="#about">About</a>
+  <a href="#work">Work</a>
+  <a href="#showreel">Showreel</a>
+  <a href="#contact" class="overlay-cta">Work with me</a>
+</div>
 
-    <header id="home" class="hero">
-        <div class="hero-bg" id="parallax-bg"></div>
-        <div class="hero-content">
-            <img src="assets/logo.png" alt="Tom Oerter Prod" class="hero-logo">
-            <p class="subtitle">3D • VFX • FILMING • EDITING</p>
-            <a href="#portfolio" class="cta-btn">View My Work</a>
-        </div>
-    </header>
+<!-- ── NAVBAR ── -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Tom Oerter Prod">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#showreel">Showreel</a></li>
+    <li><a href="#contact" class="nav-cta">Work with me</a></li>
+  </ul>
+  <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text glass-card">
-                    <p>I am a passionate creative professional specializing in 3D animation, Visual Effects, Filming,
-                        and Editing. With a keen eye for detail and a drive for storytelling, I bring visions to life
-                        through dynamic visuals and cutting-edge techniques.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ── HERO ── -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <img src="assets/logo.png" alt="Tom Oerter Prod" class="hero-logo">
+    <div class="hero-tags">
+      <span class="hero-tag">3D &amp; VFX</span>
+      <span class="hero-tag">Direction</span>
+      <span class="hero-tag">Post Production</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">✦&nbsp;&nbsp;Work with me</a>
+      <a href="#showreel" class="btn-ghost">↓&nbsp;&nbsp;Watch Showreel</a>
+    </div>
+  </div>
+  <div class="hero-bottom">Director &amp; 3D / VFX Artist<br>Based in Germany</div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">Services</h2>
-            <div class="services-grid">
-                <div class="service-card glass-card">
-                    <h3>3D & VFX</h3>
-                    <p>High-end 3D modeling, animation, and visual effects that push the boundaries of imagination.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <h3>Filming</h3>
-                    <p>Professional cinematography capturing the perfect aesthetic and emotion for your project.</p>
-                </div>
-                <div class="service-card glass-card">
-                    <h3>Editing</h3>
-                    <p>Precise video editing, color grading, and sound design to craft a compelling final cut.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ── ABOUT ── -->
+<section class="section" id="about">
+  <div class="section-label reveal">About</div>
+  <div class="divider reveal reveal-d1"></div>
+  <div class="about-grid">
 
-    <section id="portfolio" class="section">
-        <div class="container">
-            <h2 class="section-title">Selected Work</h2>
-            <div class="portfolio-grid">
-                <!-- YouTube Embed Placeholder 1 -->
-                <div class="video-wrapper">
-                    <!-- Example random YouTube URL placeholder -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=E1t3T_2R3yUo7Jp9"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <!-- YouTube Embed Placeholder 2 -->
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=E1t3T_2R3yUo7Jp9"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="reveal reveal-d1">
+      <h2 class="about-title">Crafting worlds<br>pixel by pixel.</h2>
+      <p class="about-body">
+        Tom Oerter is a <strong>3D artist, VFX supervisor</strong> and director based in Germany.
+        Specialising in photorealistic CG, motion graphics and visual effects for commercial
+        and narrative productions — turning concepts into fully realised visual worlds.
+      </p>
+    </div>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p style="text-align: center; margin-bottom: 0.5rem;">Ready to collaborate? Reach out to me.</p>
-            <div class="contact-wrapper glass-card">
-                <form action="https://formspree.io/f/mwvnzroq" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="Name" required placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" name="E-Mail" required placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="Message" required placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn" style="margin-top: 1rem;">Lets work</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <div class="about-portrait reveal reveal-d2">
+      <img src="assets/me.png" alt="Tom Oerter">
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Tom Oerter Prod. All rights reserved.</p>
-            <div class="legal-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-            </div>
-        </div>
-    </footer>
+    <div class="stat-grid reveal reveal-d3" style="align-self:center;">
+      <div class="stat-cell">
+        <div class="stat-label">Core</div>
+        <div class="stat-value">3D &amp; VFX</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Also</div>
+        <div class="stat-value">Direction</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Format</div>
+        <div class="stat-value">Film &amp; Ad</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">Based</div>
+        <div class="stat-value">Germany</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="section-bottom" id="services">
+  <div class="section-label reveal">Services</div>
+  <div class="divider reveal reveal-d1"></div>
+  <div class="services-grid">
+
+    <div class="service-card reveal reveal-d1">
+      <div class="service-number">01</div>
+      <div class="service-icon">⬡</div>
+      <div class="service-name">3D Animation &amp; Rendering</div>
+      <div class="service-desc">
+        Photorealistic 3D environments, product visualisation, character animation
+        and full CG sequences for any format or platform.
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-d2">
+      <div class="service-number">02</div>
+      <div class="service-icon">◈</div>
+      <div class="service-name">VFX &amp; Compositing</div>
+      <div class="service-desc">
+        Live-action VFX integration, motion tracking, green screen compositing
+        and visual enhancement from pre-production through final delivery.
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-d3">
+      <div class="service-number">03</div>
+      <div class="service-icon">▶</div>
+      <div class="service-name">Direction &amp; Post</div>
+      <div class="service-desc">
+        End-to-end production from concept to screen — directing, editing,
+        colour grading and mastering for commercial and narrative film.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SELECTED WORK ── -->
+<section class="section" id="work">
+  <div class="section-label reveal">Selected Work</div>
+  <div class="divider reveal reveal-d1"></div>
+  <div class="work-grid">
+
+    <a class="work-item wide reveal reveal-d1" href="https://www.youtube.com/watch?v=n1rqith_a9Q" target="_blank" rel="noopener noreferrer">
+      <div class="work-item-bg"></div>
+      <img class="work-item-img" src="https://img.youtube.com/vi/n1rqith_a9Q/maxresdefault.jpg" alt="Project One">
+      <div class="work-play">▶</div>
+      <div class="work-item-overlay">
+        <div class="work-category">3D · VFX · Commercial</div>
+        <div class="work-title">99based Clothing Sale</div>
+      </div>
+    </a>
+
+    <a class="work-item reveal reveal-d2" href="https://youtu.be/c2tlgRikIjs" target="_blank" rel="noopener noreferrer">
+      <div class="work-item-bg"></div>
+      <img class="work-item-img" src="https://img.youtube.com/vi/c2tlgRikIjs/maxresdefault.jpg" alt="Project Two">
+      <div class="work-play">▶</div>
+      <div class="work-item-overlay">
+        <div class="work-category">VFX · Documentary</div>
+        <div class="work-title">Das Apollo 13 Desaster</div>
+      </div>
+    </a>
+
+    <a class="work-item reveal reveal-d3" href="https://www.youtube.com/watch?v=N1fM6NnPNmI" target="_blank" rel="noopener noreferrer">
+      <div class="work-item-bg"></div>
+      <img class="work-item-img" src="https://img.youtube.com/vi/N1fM6NnPNmI/maxresdefault.jpg" alt="Project Three">
+      <div class="work-play">▶</div>
+      <div class="work-item-overlay">
+        <div class="work-category">VFX · Music Video</div>
+        <div class="work-title">BLP Kosher — Skidoo</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── SHOWREEL ── -->
+<div class="showreel-wrap" id="showreel">
+  <div class="showreel-header">
+    <h2 class="showreel-title reveal">Showreel<br>2024 — 2025</h2>
+    <div class="showreel-meta reveal reveal-d1">
+      Full-length reel<br>
+      3D · VFX · Direction<br>
+      GDPR-safe embed
+    </div>
+  </div>
+  <div class="showreel-embed reveal" id="showreel-embed">
+    <div class="yt-consent" id="yt-consent">
+      <div class="yt-play-btn">▶</div>
+      <div>
+        <div class="yt-consent-label">Play Full Showreel</div>
+        <div class="yt-consent-note">Loads via youtube-nocookie.com — click to consent</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<section class="section" id="contact">
+  <div class="section-label reveal">Contact</div>
+  <div class="divider reveal reveal-d1"></div>
+  <div class="contact-grid">
+
+    <div class="reveal reveal-d1">
+      <h2 class="contact-title">Let's build<br>something real.</h2>
+      <p class="contact-sub">
+        Open for 3D, VFX and production projects.<br>
+        Collaborations and creative partnerships welcome.
+      </p>
+      <div class="contact-cta">
+        <a href="mailto:tomoerterprod@gmail.com" class="btn-primary">✦&nbsp;&nbsp;Work with me</a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d2">
+      <div class="contact-links">
+        <a href="mailto:tomoerterprod@gmail.com" class="contact-link">
+          <span>Email</span>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://www.instagram.com/tomoerterprod" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span>Instagram</span>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-copy">© 2025 Tom Oerter Prod. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
-
 </html>

@@ -1,86 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum | Tom Oerter Prod</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .legal-content {
-            margin-top: 100px;
-            padding: 2rem 5%;
-            min-height: 70vh;
-        }
-
-        .legal-content h1 {
-            margin-bottom: 2rem;
-            color: var(--accent-color);
-        }
-
-        .legal-content h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .legal-content p {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum | Tom Oerter Prod</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+<body>
 
-<body class="dark-theme">
-    <nav id="navbar" class="scrolled">
-        <a href="index.html" class="logo"><img src="assets/logo.png" alt="Tom Oerter Prod"></a>
-        <ul class="nav-links">
-            <li><a href="index.html">Back to Home</a></li>
-        </ul>
-    </nav>
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="Tom Oerter Prod">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">← Back to Home</a></li>
+  </ul>
+  <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-    <div class="container legal-content">
-        <h1>Impressum</h1>
-        <div class="glass-card">
-            <h2>Angaben gemäß § 5 TMG</h2>
-            <p>
-                Tom Oerter Prod<br>
-                Effertsufer 16<br>
-                57072 Siegen<br>
-            </p>
+<div id="nav-overlay" class="nav-overlay">
+  <a href="index.html">← Home</a>
+</div>
 
-            <h2>Kontakt</h2>
-            <p>
-                E-Mail: info@tomoerterprod.com<br>
-            </p>
+<div class="legal-wrap">
+  <a href="index.html" class="legal-back">← Back to Home</a>
+  <h1>Impressum</h1>
 
-            <h2>Umsatzsteuer-ID</h2>
-            <p>
-                Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
-                342/5223/6539<br>
-            </p>
+  <h2>Angaben gemäß § 5 TMG</h2>
+  <p>
+    Tom Oerter Prod<br>
+    Effertsufer 16<br>
+    57072 Siegen
+  </p>
 
-            <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-            <p>
-                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-                Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
-        </div>
-    </div>
+  <h2>Kontakt</h2>
+  <p>E-Mail: info@tomoerterprod.com</p>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Tom Oerter Prod. All rights reserved.</p>
-            <div class="legal-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
-            </div>
-        </div>
-    </footer>
+  <h2>Umsatzsteuer-ID</h2>
+  <p>
+    Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+    342/5223/6539
+  </p>
+
+  <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+  <p>
+    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+    Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+</div>
+
+<footer class="footer">
+  <div class="footer-copy">© 2025 Tom Oerter Prod. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
-
 </html>

@@ -1,86 +1,63 @@
-// GSAP Animations and Vanilla JS functionality
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
+/* ── SCROLL REVEAL ── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
+  });
+}, { threshold: 0.12 });
 
-    // Register ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Hero Animations
-    const tl = gsap.timeline();
-    tl.from('.hero-logo', { y: 50, opacity: 0, duration: 1, ease: 'power3.out' })
-        .from('.subtitle', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
-        .from('.cta-btn', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5');
+/* ── NAVBAR: solid background on scroll ── */
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', window.scrollY > 60);
+}, { passive: true });
 
-    // Parallax background
-    gsap.to('#parallax-bg', {
-        yPercent: 30,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '.hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-        }
+/* ── MOBILE HAMBURGER ── */
+const toggle  = document.getElementById('nav-toggle');
+const overlay = document.getElementById('nav-overlay');
+
+if (toggle && overlay) {
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.classList.toggle('open');
+    overlay.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  overlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
     });
+  });
+}
 
-    // Fade-in sections on scroll
-    const sections = gsap.utils.toArray('.section');
-    sections.forEach(section => {
-        gsap.from(section.querySelectorAll('.glass-card, .video-wrapper, .section-title'), {
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: section,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse'
-            }
-        });
-    });
+/* ── YOUTUBE GDPR CONSENT ── */
+const consent = document.getElementById('yt-consent');
+const embed   = document.getElementById('showreel-embed');
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+if (consent && embed) {
+  consent.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/Y7wqj-l1Gy8?autoplay=1&rel=0&modestbranding=1';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    embed.appendChild(iframe);
+    consent.classList.add('hidden');
+  });
+}
 
+/* ── SMOOTH SCROLL for anchor links ── */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
