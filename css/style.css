@@ -243,10 +243,9 @@ a { color: inherit; text-decoration: none; }
 .about-portrait img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: top center;
-  filter: grayscale(100%) contrast(1.05);
   transition: filter 0.7s ease;
 }
-.about-portrait:hover img { filter: grayscale(50%) contrast(1.05); }
+.about-portrait:hover img { }
 .about-portrait::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0; height: 35%;
